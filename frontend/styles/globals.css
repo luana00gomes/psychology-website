@@ -35,6 +35,12 @@
 }
 
 .page2{
+    background-image: url("../public/forma3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page3{
     background-color: #F9F5F1;
 }
 
@@ -46,4 +52,33 @@
 .footer{
     background-color: #312107;
     color: #FEFCE8;
+}
+
+.container {
+    position: relative; /* Parent container for positioning */
+    margin: auto;
+    overflow: visible;
+}
+  
+.content-back {
+    position: relative;
+    width: 50vw;
+    top: 0;
+    left: -15vw;
+    z-index: 1; /* Lower z-index pushes this content behind */
+}
+
+.content-back-2 {
+    position: relative;
+    width: 50vw;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Lower z-index pushes this content behind */
+}
+  
+.content-front {
+    position: absolute;
+    top: 50px; /* Adjust position */
+    left: 50px; /* Adjust position */
+    z-index: 2; /* Higher z-index brings this content to the front */
 }
