@@ -9,37 +9,39 @@ export default function IndexPage() {
       <PageOne />
       <PageTwo />
       <PageThree />
+      
     </div>
   );
 }
 
 const PageOne = () => {
   return (
-      <div className="static p-8 col-12 flex flex-row items-center h-screen page-1">
-        <div className="justify w-2/3 mr-20 p-40">
+      <div className="static p-8 col-12 flex flex-col md:flex-row items-center h-screen page-1">
+        <div className="justify md:w-2/3 lg:mr-20 lg:p-40 p-4 text-center md:text-left">
           <p className="presentation">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
 
-          <h1 className="text-8xl	title m-80">Silvana Silva</h1>
+          <h1 className="text-4xl md:text-8xl	title m-80">Silvana Silva</h1>
 
-          <div className="row flex flex-row items-center">
-            <h5 className="text-xl	subtitle">CRP 000/9889</h5>
-            <i className="fas fa-map-marker-alt ml-6 mr-2" />
-            <h5 className="text-xl subtitle">Rua Tranquedo Neves, Centro</h5>
+          <div className="row flex flex-col md:flex-row items-center">
+            <h5 className="text-xl	subtitle">CRP 18/7036</h5>
+            <div className="flex flex-row items-center">
+              <i className="fas fa-map-marker-alt md:ml-9 mr-1" />
+              <h5 className="text-xl subtitle">Tangará da Serra, MT</h5>
+            </div>
           </div>
         </div>
 
-        <div className="content-center w-1/3">
+        <div className="md:content-center md:w-1/3">
           <Image
             alt="HeroUI hero Image"
-            height={400}
+            width= {'auto'}
             radius='full'
             src="profile1.png"
-            width='auto'
           />
         </div>
-        <div className="absolute inset-x-0 bottom-0 left-[66.6667%] translate-x-[-50%] translate-y-[50px]">
+        <div className="absolute hidden lg:block inset-x-0 bottom-0 left-[66.6667%] translate-x-[-50%] translate-y-[50px]">
           <Image
               alt="HeroUI hero Image"
               height={300}
@@ -76,12 +78,12 @@ const PageTwo = () => {
 
   return (
     <div className="relative col-12 flex flex-col py-20 page2">
-      <div className="flex flex-row justify mx-auto gap-20 page2">
+      <div className="flex flex-col md:flex-row justify mx-auto gap-20 page2">
         <CardStyled title='Assunto'>
           <p className="">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
-        </CardStyled>
+        </CardStyled> 
 
         <CardStyled title='Assunto'>
           <p className="">
@@ -90,7 +92,7 @@ const PageTwo = () => {
         </CardStyled>
       </div>
 
-      <div className="absolute bottom-0 left-0">
+      <div className="md:absolute bottom-0 left-0">
         <Image
             alt="HeroUI hero Image"
             height={300}
