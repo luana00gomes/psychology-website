@@ -1,0 +1,21 @@
+
+<script>
+	<canvas id='canvas' width='210' height='297'></canvas>
+    const canvas = document.createElement('canvas');
+    canvas.width = 2100;
+    canvas.height = 2970;
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.fillStyle = 'rgb(253, 237, 211)';
+    ctx.moveTo(-43.69216, 134.98333);
+    ctx.bezierCurveTo(-43.69216, 134.98333, 181.67260, 18.74469, 587.75249, 13.50248);
+    ctx.bezierCurveTo(980.91784, 8.42716, 1063.29620, 96.06798, 1462.09580, 135.51550);
+    ctx.bezierCurveTo(1817.62100, 170.68270, 2108.70410, 143.59535, 2108.70410, 143.59535);
+    ctx.lineTo(2106.68670, 1119.11460);
+    ctx.bezierCurveTo(1408.17200, 1118.09800, 707.74673, 1131.29180, -33.74345, 1124.59300);
+    ctx.closePath();
+    ctx.fill();
+
+    const dataURL = canvas.toDataURL();
+</script>

@@ -1,25 +1,43 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import { Image } from "@heroui/react";
-import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
-import {Button} from "@heroui/button";
+import { Button } from "@heroui/button";
+import Waves from "@/components/waves";
+import Counter from "@/components/counter";
+import CardStyled from "@/components/cardstyled";
 
 export default function IndexPage() {
   return (
     <div>
       <PageOne />
       <PageTwo />
+      <PageFour />
       <PageThree />
-      
+
+      <div className="fixed bottom-4 lg:bottom-14 right-4 lg:right-16">
+        <Button className="z-40 h-auto bg-transparent drop-shadow-[0_0_10px_#F9C97C] " onPress={() => window.open("https://wa.me/5565981135626", "_blank")}>
+          <Image
+            alt="HeroUI hero Image"
+            height={60}
+            width={60}
+            src="whatsapp_amarelo.png"
+          />
+        </Button>
+      </div>
     </div>
   );
 }
 
+
+
 const PageOne = () => {
+
   return (
-      <div className="static p-8 col-12 flex flex-col md:flex-row items-center h-screen page-1">
+    <>
+      {/*Desktop*/}
+      <div className="hidden md:flex static p-8 col-12 md:flex-row items-center h-screen page-1">
         <div className="justify md:w-2/3 lg:mr-20 lg:p-40 p-4 text-center md:text-left">
-          <p className="presentation">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          <p className="presentation" style={{ margin: '44px 0' }}>
+            Olá, sou a Silvana Silva <strong className="font-bold">psicóloga clínica</strong> em <strong className="font-bold">terapia cognitivo comportamental (TCC)</strong>, especializada em atendimento psicoterapêutico  <strong className="font-bold">infantil, adolescente e adultos</strong>. O meu propósito é promover um espaço de escuta e acolhimento singular, onde você possa deslumbrar e fortalecer os seus valores, e com sutileza criar novos caminhos e oportunidades.
           </p>
 
           <h1 className="text-4xl md:text-8xl	title m-80">Silvana Silva</h1>
@@ -36,25 +54,121 @@ const PageOne = () => {
         <div className="md:content-center md:w-1/3">
           <Image
             alt="HeroUI hero Image"
-            width= {'auto'}
+            width={'auto'}
             radius='full'
             src="profile1.png"
           />
         </div>
-        <div className="absolute hidden lg:block inset-x-0 bottom-0 left-[66.6667%] translate-x-[-50%] translate-y-[50px]">
+
+        <div className="absolute hidden lg:block inset-x-0 bottom-0 left-[66.6667%] translate-x-[-50%] -translate-y-[20px]">
           <Image
-              alt="HeroUI hero Image"
-              height={300}
-              width={300}
-              src="girassol.svg"
-            />
+            alt="HeroUI hero Image"
+            height={300}
+            width={300}
+            src="girassol.svg"
+          />
         </div>
+
+        <Waves />
+
       </div>
+
+      {/*Mobile*/}
+      <div className="static md:hidden">
+        <div className="p-8 col-12 flex flex-col md:flex-row items-center page-1 pt-20">
+          <h1 className="text-6xl md:text-8xl	title m-8">Silvana Silva</h1>
+
+          <div className="row flex flex-col md:flex-row items-center">
+            <h5 className="text-xl subtitle font-bold">CRP 18/7036</h5>
+            <div className="flex flex-row items-center">
+              <i className="fas fa-map-marker-alt md:ml-9 mr-1" />
+              <h5 className="text-xl subtitle">Tangará da Serra, MT</h5>
+            </div>
+          </div>
+
+
+          <div className="md:content-center md:w-1/3 my-8">
+            <Image
+              alt="HeroUI hero Image"
+              width={'auto'}
+              radius='full'
+              src="profile1.png"
+            />
+          </div>
+        </div>
+        <div className="relative">
+          <Waves />
+        </div>
+        <div className="content flex">
+          <div className="relative -top-12 justify text-center md:text-left md:w-2/3 presentation_mobile">
+            <div className="fancy-quote presentation m-0 p-8">
+              <blockquote>
+                <p>
+                  Olá, sou a Silvana Silva <strong className="font-bold">psicóloga clínica</strong> em <strong className="font-bold">terapia cognitivo comportamental (TCC)</strong>, especializada em atendimento psicoterapêutico  <strong className="font-bold">infantil, adolescente e adultos</strong>. O meu propósito é promover um espaço de escuta e acolhimento singular, onde você possa deslumbrar e fortalecer os seus valores, e com sutileza criar novos caminhos e oportunidades.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="w-1/3 m-auto">
+          <Image
+            alt="HeroUI hero Image"
+            height={200}
+            width={200}
+            src="girassol.svg"
+          />
+        </div>
+
+      </div>
+    </>
 
   )
 }
 
 const PageTwo = () => {
+  return (
+    <div className="relative -top-40 lg:top-0 col-12 flex flex-col py-20 page2">
+
+      <div className="flex flex-col md:flex-row justify mx-auto lg:p-30 gap-20">
+        <CardStyled title=''>
+          <div className="w-auto m-auto">
+            <Image
+              alt=""
+              height={'auto'}
+              width={'auto'}
+              src="familia.png"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row justify mx-auto counter">
+            <h1>+</h1><Counter countTo={120} />
+          </div>
+          <h1 className="m-auto text-center text-xl lg:text-2xl" style={{ color: '#936316' }}>Famílias Atendidas</h1>
+        </CardStyled>
+
+        <CardStyled title=''>
+          <div className="w-auto m-auto">
+            <Image
+              alt=""
+              height={'auto'}
+              width={'auto'}
+              src="saude-mental.png"
+            />
+          </div>
+          <div className="flex flex-col md:flex-row justify mx-auto counter">
+            <h1>+</h1><Counter countTo={1500} />
+          </div>
+          <h1 className="m-auto text-center text-xl lg:text-2xl" style={{ color: '#936316' }}>Sessões Realizadas</h1>
+        </CardStyled>
+
+      </div>
+    </div>
+  );
+};
+
+const PageThree = () => {
   useEffect(() => {
     const canvas = document.createElement('canvas');
     canvas.width = 2100;
@@ -73,81 +187,111 @@ const PageTwo = () => {
     ctx.fill();
 
     const dataURL = canvas.toDataURL();
-    document.querySelector('.page2').style.backgroundImage = `url(${dataURL})`;
+    document.querySelector('.page3').style.backgroundImage = `url(${dataURL})`;
   }, []);
 
+
   return (
-    <div className="relative col-12 flex flex-col py-20 page2">
-      <div className="flex flex-col md:flex-row justify mx-auto gap-20 page2">
-        <CardStyled title='Assunto'>
-          <p className="">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-        </CardStyled> 
+    <div className="relative -top-40 lg:top-0 col-12 flex py-20 page3">
+      <div className="flex flex-col lg:flex-row justify mx-auto gap-20">
+        <CardStyled title=''>
+          <div className="wx-auto m-auto">
+            <Image
+              alt=""
+              height={'auto'}
+              width={'auto'}
+              src="teste.png"
+            />
+          </div>
 
-        <CardStyled title='Assunto'>
-          <p className="">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-        </CardStyled>
-      </div>
-
-      <div className="md:absolute bottom-0 left-0">
-        <Image
-            alt="HeroUI hero Image"
-            height={300}
-            width={300}
-            src="family.svg"
-          />
-        </div>
-    </div>
-  );
-};
-
-const PageThree = () => {
-  return (
-    <div className="col-12 flex flex-row py-20 page3">
-      <div className="flex flex-row justify mx-auto gap-20">
-        <CardStyled title='Assunto'>
-          <p className="">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+          <div className="flex flex-col items-center mt-4">
+            <h2 className="text-lg lg:text-xl font-semibold text-gray-700">Avaliações para</h2>
+            <ul className="list-none list-disc text-center text-md lg:text-lg text-gray-600 mt-2">
+              <li className="before:content-['✔']">Ansiedade</li>
+              <li className="before:content-['✔']">Depressão</li>
+              <li className="before:content-['✔']">TDAH (Transtorno do Déficit de Atenção e Hiperatividade)</li>
+              <li className="before:content-['✔']">TOD (Transtorno Opositor Desafiador)</li>
+              <li className="before:content-['✔']">TOC (Transtorno Obsessivo-Compulsivo)</li>
+              <li className="before:content-['✔']">TEA (Transtorno do Espectro Autista)</li>
+              <li className="before:content-['✔']">Outros</li>
+            </ul>
+          </div>
         </CardStyled>
 
-        <CardStyled title='Assunto'>
-          <p className="">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+
+        <CardStyled title="">
+          <div className="w-auto mx-auto">
+            <Image alt="Educação em Psicologia" height="auto" width="auto" src="educacao.png" />
+          </div>
+
+          <div className="flex flex-col items-center mt-4">
+            <h2 className="text-lg lg:text-xl font-semibold text-gray-700">Formação</h2>
+            <ul className="list-none text-center text-md lg:text-lg text-gray-600 mt-2 space-y-2">
+              <li className="items-center flex flex-col mt-2">
+                <span className="font-medium">Pós-graduação em Terapia Cognitivo-Comportamental</span>
+                <span className="text-sm">Faculdade Cognito • Dez/2023 - Dez/2025</span>
+              </li>
+
+              <li className="items-center flex flex-col mt-2">
+                <span className="font-medium">Pós-graduação em Psicologia Clínica</span>
+                <span className="text-sm">Facuminas EAD • Set/2022 - Mar/2023</span>
+              </li>
+
+              <li className="items-center flex flex-col mt-2">
+                <span className="font-medium">Pós-graduação em Análise do Comportamento Aplicada (ABA)</span>
+                <span className="text-sm">Facuminas EAD • Set/2022 - Mar/2023</span>
+              </li>
+
+              <li className="items-center flex flex-col mt-2">
+                <span className="font-medium">Graduação em Psicologia</span>
+                <span className="text-sm">Faculdade de Ensino Superior de Tangará da Serra • 2017 - 2021</span>
+              </li>
+            </ul>
+          </div>
         </CardStyled>
 
-        <CardStyled title='Assunto'>
-          <p className="">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-        </CardStyled>
 
+        <CardStyled title="">
+          <div className="w-auto mx-auto">
+            <Image alt="Autismo e ABA" height="auto" width="auto" src="autismo.png" />
+          </div>
+
+          <div className="flex flex-col items-center mt-4">
+            <h2 className="text-lg lg:text-xl font-semibold text-gray-700 text-center">
+              Especialista em TEA
+            </h2>
+            <ul className="list-none list-disc text-center text-md lg:text-lg text-gray-600 mt-2">
+              <li className="before:content-['✔']">Intervenção personalizada para crianças atípicas</li>
+              <li className="before:content-['✔']">Orientação de pais e famílias</li>
+              <li className="before:content-['✔']">Desenvolvimento de habilidades sociais, cognitivas e emocionais para vida e escola</li>
+              <li className="before:content-['✔']">Supervisora e Aplicadora da ciência ABA (Applied Behavior Analysis)</li>
+            </ul>
+
+          </div>
+        </CardStyled>
       </div>
     </div>
   )
 }
 
-
-interface CardStyledProps {
-  title: string;
-  children: React.ReactNode;
-}
-
-const CardStyled = ({ title, children }: CardStyledProps) => {
+const PageFour = () => {
   return (
-    <Card className="max-w-[400px] p-5 card">
-      <CardHeader className="flex gap-3">
-        <h1 className="text-lg">{title}</h1>
-      </CardHeader>
-      <CardBody>
-        {children}
-      </CardBody>
-    </Card>
+    <div className="relative -top-40 lg:top-0 flex flex-col items-center py-20 px-4 bg-[#F9F5F1]">
+      <div className="w-auto m-auto">
+        <Image alt="Atendimento Remoto" height="auto" width="auto" src="educacao-a-distancia.png" />
+      </div>
+
+      <h1 className="tracking-tight text-center inline font-semibold from-[#936316] to-[#F5A524] text-[clamp(1rem,10vw,2rem)] sm:text-[clamp(1rem,10vw,3rem)] lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Atendimento Remoto e Presencial&nbsp;</h1>
+      <h3 className="text-center text-xl lg:text-2xl text-[#F7B750] font-medium mt-2">
+        Em Tangará da Serra
+      </h3>
+
+      <button
+        className="mt-6 bg-[#F7B750] hover:bg-[#F5A524] text-[#62420E] font-semibold py-3 px-6 rounded-full text-lg shadow-md transition-all duration-300"
+        onClick={() => window.open("https://wa.me/5565981135626", "_blank")}
+      >
+        Agende seu horário
+      </button>
+    </div>
   );
-}
-
-
+};
