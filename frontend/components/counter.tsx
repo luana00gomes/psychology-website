@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const Counter = ({ countTo }) => {
+interface CounterProps {
+  countTo: number;
+}
+
+const Counter: React.FC<CounterProps> = ({ countTo }) => {
     const [count, setCount] = useState(0);
     const [visible, setVisible] = useState(false);
     const _class = `count oldstyle-nums transition-opacity duration-5000 ${visible ? "opacity-100" : "opacity-0"}`;
@@ -20,7 +24,7 @@ const Counter = ({ countTo }) => {
           setCount(Math.floor(start));
           requestAnimationFrame(animateCount);
         } else {
-          setCount(countTo.toLocaleString()); // Format with commas
+          setCount(countTo); // Format with commas
         }
       };
   
