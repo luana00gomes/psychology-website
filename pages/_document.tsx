@@ -9,6 +9,27 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Font Awesome */}
+        <title>Silvana Psicóloga | Psicóloga Clínica em Tangará da Serra</title>
+        <meta name="description" content="Silvana Silva, psicóloga clínica especializada em terapia cognitivo comportamental (TCC) para crianças, adolescentes e adultos. Atendimento em Tangará da Serra, MT." />
+        <meta name="keywords" content="psicologia, psicologa, terapia cognitivo comportamental, TCC, psicoterapia, saúde mental, ansiedade, depressão, TDAH, TOC, TEA, tangará da serra, saúde, terapeuta, analista" />
+        <meta name="author" content="Luana Gomes" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Silvana Silva | Psicóloga Clínica" />
+        <meta property="og:description" content="Psicóloga especializada em TCC para crianças, adolescentes e adultos. Atendimento personalizado em Tangará da Serra, MT." />
+        <meta property="og:image" content="/profile1.png" />
+        <meta property="og:url" content="https://www.silvanapsi.online" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Silvana Silva | Psicóloga Clínica" />
+        <meta name="twitter:description" content="Psicóloga especializada em TCC para crianças, adolescentes e adultos. Atendimento personalizado em Tangará da Serra, MT." />
+        <meta name="twitter:image" content="/profile1.png" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
           rel="stylesheet"
@@ -77,15 +98,15 @@ export default function Document() {
 
         </div>
         <p className="text-xs text-[#C4841D] mt-10 mb-4 text-center">
-          Developer © 2025 
-          <a 
-            href="https://www.linkedin.com/in/luana-g/" 
-            target="_blank" 
+          Developer © 2025
+          <a
+            href="https://www.linkedin.com/in/luana-g/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-[#F5A524] hover:text-[#F7B750] font-semibold transition-all duration-300"
           >
             {" "}linkedin.com/in/luana-g/
-          </a>. 
+          </a>.
           Built with <span className="font-medium text-[#936316]">React</span> and <span className="font-medium text-[#936316]">TailwindCSS</span>.
         </p>
       </footer>
